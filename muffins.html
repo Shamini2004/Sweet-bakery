@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Muffins</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>🍰 Sweet Bakery</h1>
+    <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+</header>
+
+<h2 class="title">🧁 Muffins</h2>
+
+<div class="products">
+    <div class="card">
+        <img src="muffin1.jpg">
+        <h3>Vanilla Muffin</h3>
+        <button onclick="viewItem('Vanilla Muffin','₹120/pc','Vanilla','muffin1.jpg')">View</button>
+    </div>
+
+    <div class="card">
+        <img src="\muffin2.jpg">
+        <h3>Chocolate Muffin</h3>
+        <button onclick="viewItem('Chocolate Muffin','₹130/pc','Chocolate','muffin2.jpg')">View</button>
+    </div>
+
+    <div class="card">
+        <img src="muffin3.jpg">
+        <h3>Blueberry Muffin</h3>
+        <button onclick="viewItem('Blueberry Muffin','₹140/pc','Blueberry','muffin3.jpg')">View</button>
+    </div>
+</div>
+
+<script>
+function viewItem(name, price, flavor, img) {
+    localStorage.setItem("name", name);
+    localStorage.setItem("price", price);
+    localStorage.setItem("flavor", flavor);
+    localStorage.setItem("img", img);
+    window.location.href = "view.html";
+}
+</script>
+
+</body>
+</html>

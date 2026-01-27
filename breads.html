@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breads</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>🍰 Sweet Bakery</h1>
+    <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+</header>
+
+<h2 class="title">🍞 Breads</h2>
+
+<div class="products">
+    <div class="card">
+        <img src="bread1.jpg">
+        <h3>Whole Wheat Bread</h3>
+        <button onclick="viewItem('Whole Wheat Bread','₹60/kg','Wheat','bread1.jpg')">View</button>
+    </div>
+
+    <div class="card">
+        <img src="bread2.jpg">
+        <h3>Multigrain Bread</h3>
+        <button onclick="viewItem('Multigrain Bread','₹70/kg','Multigrain','bread2.jpg')">View</button>
+    </div>
+
+    <div class="card">
+        <img src="bread3,jpg.jpg">
+        <h3>Baguette</h3>
+        <button onclick="viewItem('Baguette','₹80/kg','French','bread3.jpg')">View</button>
+    </div>
+</div>
+
+<script>
+function viewItem(name, price, flavor, img) {
+    localStorage.setItem("name", name);
+    localStorage.setItem("price", price);
+    localStorage.setItem("flavor", flavor);
+    localStorage.setItem("img", img);
+    window.location.href = "view.html";
+}
+</script>
+
+</body>
+</html>

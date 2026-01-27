@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cakes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>🍰 Sweet Bakery</h1>
+    <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+</header>
+
+<h2 class="title">🍰 Cakes</h2>
+
+<div class="products">
+    <div class="card">
+        <img src="cake1.jpg">
+        <h3>Chocolate Cake</h3>
+        <button onclick="viewItem('Chocolate Cake','₹500/kg','Chocolate','cake1.jpg')">View</button>
+    </div>
+
+    <div class="card">
+        <img src="cake2.jpg">
+        <h3>Vanilla Cake</h3>
+        <button onclick="viewItem('Vanilla Cake','₹450/kg','Vanilla','cake2.jpg')">View</button>
+    </div>
+
+    <div class="card">
+        <img src="cake3.jpg">
+        <h3>Strawberry Cake</h3>
+        <button onclick="viewItem('Strawberry Cake','₹550/kg','Strawberry','cake3.jpg')">View</button>
+    </div>
+</div>
+
+<script>
+function viewItem(name, price, flavor, img) {
+    localStorage.setItem("name", name);
+    localStorage.setItem("price", price);
+    localStorage.setItem("flavor", flavor);
+    localStorage.setItem("img", img);
+    window.location.href = "view.html";
+}
+</script>
+
+</body>
+</html>

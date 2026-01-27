@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Sweet Bakery</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial;
+            background: #fff4e6;
+            margin: 0;
+        }
+
+        header {
+            background: brown;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .login-box {
+            background: white;
+            width: 300px;
+            margin: 80px auto;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .login-box h1 {
+            color: brown;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: brown;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: darkred;
+        }
+
+        .sweet-header {
+            font-size: 24px;
+            color: brown;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    🍰 Sweet Bakery  
+</header>
+
+<div class="login-box">
+    <div class="sweet-header">Login</div>
+    <input type="text" id="user" placeholder="Username">
+    <input type="password" id="pass" placeholder="Password">
+    <button onclick="login()">Login</button>
+</div>
+
+<script>
+    function login() {
+        let user = document.getElementById("user").value;
+        let pass = document.getElementById("pass").value;
+
+        if(user && pass) {
+            alert("Login Successful! 🍰"); 
+            window.location.href = "index.html"; 
+        } else {
+            alert("Please enter username and password!");
+        }
+    }
+</script>
+
+</body>
+</html>

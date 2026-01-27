@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Item</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>🍰 Sweet Bakery</h1>
+    <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+</header>
+
+<div class="view-box">
+    <img id="img">
+    <h2 id="name"></h2>
+    <p id="price"></p>
+    <p id="flavor"></p>
+
+    <button onclick="order()">Order</button>
+</div>
+
+<script>
+document.getElementById("img").src =  localStorage.getItem("img");
+document.getElementById("name").innerText = localStorage.getItem("name");
+document.getElementById("price").innerText = "Price: " + localStorage.getItem("price");
+document.getElementById("flavor").innerText = "Flavor: " + localStorage.getItem("flavor");
+
+function order() {
+    window.location.href = "order.html";
+}
+</script>
+
+</body>
+</html>

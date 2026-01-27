@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fff4e6;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            font-family: Arial;
+        }
+
+        .modal-content h2 {
+            color: brown;
+            margin-bottom: 10px;
+        }
+
+        .modal-content p {
+            margin: 5px 0;
+        }
+
+        .close-btn, .home-btn {
+            background: brown;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .home-btn {
+            background: green;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🍰 Sweet Bakery</h1>
+    <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+</header>
+
+<div class="order-box">
+    <h2>Order Details</h2>
+
+    <input type="text" id="customerName" placeholder="Name">
+    <input type="number" id="phone" placeholder="Phone Number">
+    <textarea id="address" placeholder="Address"></textarea>
+
+    <label for="quantity">Select Quantity:</label>
+    <select id="quantity" onchange="updateTotal()">
+        <option value="1">1 kg</option>
+        <option value="1.5">1.5 kg</option>
+        <option value="2">2 kg</option>
+        <option value="3">3 kg</option>
+    </select>
+
+    <h3 id="totalPrice">Total Price: ₹0</h3>
+
+    <button onclick="placeOrder()">Place Order</button>
+</div>
+
+<!-- Modal HTML -->
+<div id="orderModal" class="modal">
+    <div class="modal-content">
+        <h2>Order Placed Successfully! 🍰</h2>
+        <p id="modalCustomer"></p>
+        <p id="modalPhone"></p>
+        <p id="modalAddress"></p>
+        <p id="modalQuantity"></p>
+        <p id="modalTotal"></p>
+        <button class="close-btn" onclick="closeModal()">OK</button>
+        <button class="home-btn" onclick="goHome()">Back to Home</button>
+    </div>
+</div>
+
+<script>
+    // Get price from localStorage
+    let price = parseFloat(localStorage.getItem("price")?.replace(/[^\d]/g,'')) || 0;
+
+    function updateTotal() {
+        let qty = parseFloat(document.getElementById("quantity").value);
+        let total = price * qty;
+        document.getElementById("totalPrice").innerText = "Total Price: ₹" + total.toFixed(2);
+    }
+
+    function placeOrder() {
+        let name = document.getElementById("customerName").value;
+        let phone = document.getElementById("phone").value;
+        let address = document.getElementById("address").value;
+        let qty = document.getElementById("quantity").value;
+        let total = (price * qty).toFixed(2);
+
+        if(name && phone && address){
+            document.getElementById("modalCustomer").innerText = "Customer: " + name;
+            document.getElementById("modalPhone").innerText = "Phone: " + phone;
+            document.getElementById("modalAddress").innerText = "Address: " + address;
+            document.getElementById("modalQuantity").innerText = "Quantity: " + qty;
+            document.getElementById("modalTotal").innerText = "Total Price: ₹" + total;
+
+            document.getElementById("orderModal").style.display = "block";
+        } else {
+            alert("Please fill all the fields before placing the order!");
+        }
+    }
+
+    function closeModal() {
+        document.getElementById("orderModal").style.display = "none";
+        document.getElementById("customerName").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("address").value = "";
+        document.getElementById("quantity").value = "1";
+        updateTotal();
+    }
+
+    function goHome() {
+        window.location.href = "index.html";
+    }
+
+    updateTotal();
+</script>
+
+</body>
+</html>

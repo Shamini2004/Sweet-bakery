@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sweet Bakery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🍰 Sweet Bakery</h1>
+    <button class="login-btn" onclick="login()">Login</button>
+</header>
+
+<div class="products">
+    <div class="card">
+        <img src="cake.jpg">
+        <h3>Cakes</h3>
+        <button onclick="location.href='cakes.html'">View</button>
+    </div>
+
+    <div class="card">
+        <img src="breads.jpg">
+        <h3>Breads</h3>
+        <button onclick="location.href='breads.html'">View</button>
+    </div>
+
+    <div class="card">
+        <img src="cookies.jpg">
+        <h3>Cookies</h3>
+        <button onclick="location.href='cookies.html'">View</button>
+    </div>
+
+    <div class="card">
+        <img src="muffins.jpg">
+        <h3>Muffins</h3>
+        <button onclick="location.href='muffins.html'">View</button>
+    </div>
+
+    <div class="card">
+        <img src="pastry.jpg">
+        <h3>Pastry</h3>
+        <button onclick="location.href='pastry.html'">View</button>
+    </div>
+</div>
+
+<script>
+function login() {
+    window.location.href = 'login.html';
+}
+</script>
+
+</body>
+</html>
