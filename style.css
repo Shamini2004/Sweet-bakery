@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fff4e6;
+    margin: 0;
+}
+
+header {
+    background: brown;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-btn {
+    background: white;
+    color: brown;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 8px 20px rgba(0,0,0,0.3);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 10px 0;
+    color: #5a1a01;
+}
+
+.card button {
+    margin-top: 10px;
+    background: brown;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.card button:hover {
+    background: #a63c3c;
+}
+
+.view-box, .order-box {
+    background: #fff0e6;
+    width: 350px;
+    margin: 50px auto;
+    padding: 30px 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.view-box:hover, .order-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.view-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.view-box h2, .order-box h2 {
+    color: #a63c3c;
+    margin-bottom: 15px;
+}
+
+.view-box p, .order-box p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.view-box button, .order-box button {
+    background: #a63c3c;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.view-box button:hover, .order-box button:hover {
+    background: #d94f4f;
+}
+
+input, textarea {
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.title {
+    text-align: center;
+    color: brown;
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
